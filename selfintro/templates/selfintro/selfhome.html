@@ -1,0 +1,16 @@
+<head>
+    <title> Self-introduce </title>
+</head>
+
+<body>
+     <h1>Self-introduce</h1>
+     <a href="{% url 'new2'%}" class="top-menu">글쓰기</a>
+    {% for post in posts.all %}
+        <div class="container">
+            <h2><a href="/selfintro/post2/{{post.id}}/">{{post.title}}</a></h2>
+            <p>{{post.created_date}}</p>
+            <!-- <p>{{post.text}}</p> -->
+        </div>
+    {% endfor %}
+
+</body>

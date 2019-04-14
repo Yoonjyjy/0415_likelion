@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import blog.views
+import selfintro.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,7 @@ urlpatterns = [
     path('blog/post/<int:post_id>/', blog.views.detail, name='detail'),
         ##포스트마다 수동으로 할당X, 자동으로 부여해주도록 됨!
     path('blog/post/new/', blog.views.post_new, name='new'),
+    path('selfintro/selfhome/', selfintro.views.selfhome, name='selfhome'),
+    path('selfintro/post2/<int:post_id>/', selfintro.views.selfdetail, name='selfdetail'),
+    path('selfintro/post2/new2/', selfintro.views.post_new2, name='new2'),
 ]
